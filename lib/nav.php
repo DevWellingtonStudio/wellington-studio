@@ -31,7 +31,7 @@ add_filter( 'wp_nav_menu_args', function( $args ) {
     } else {
         $menu_classes[] = 'ml-auto';
     }
-    
+
     if ( 'primary' === $args['theme_location'] ) {
         $args['container'] = 'div';
         $args['container_class'] = 'collapse navbar-collapse';
@@ -55,7 +55,7 @@ function bfg_nav_menu_markup_filter( $html, $args ) {
     }
 
     $data_target = 'nav' . sanitize_html_class( '-' . $args->theme_location );
-    
+
     $output = '';
 
     // only include blog name and description in the nav
@@ -66,13 +66,13 @@ function bfg_nav_menu_markup_filter( $html, $args ) {
 
     $output .= '<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#'.$data_target.'" aria-controls="'.$data_target.'" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>';
     $output .= $html;
-    
+
     $navextra = get_theme_mod( 'navextra', false );
-    
+
     if ( $navextra == true ) {
         $output .= apply_filters( 'bfg_navbar_content', bfg_navbar_content_markup() );
     }
-    
+
     return $output;
 }
 
@@ -80,7 +80,7 @@ function bfg_navbar_brand_markup() {
     if ( get_theme_mod( 'custom_logo' ) ) {
         $output = get_custom_logo();
     } else {
-        $output = '<a class="navbar-brand" title="'.esc_attr( get_bloginfo( 'name' ) ).'" href="'.esc_url( get_home_url( '/' ) ).'">'.get_bloginfo( 'name' ).'</a>';
+        $output = '<a class="navbar-brand" title="'.esc_attr( get_bloginfo( 'name' ) ).'" href="'.esc_url( get_home_url() ).'">'.get_bloginfo( 'name' ).'</a>';
     }
     return $output;
 }
@@ -88,11 +88,11 @@ function bfg_navbar_brand_markup() {
 //* Navigation Extras
 function bfg_navbar_content_markup() {
     $url = get_home_url();
-    
+
     $choices = get_theme_mod( 'navextra', 'search' );
-    
+
     $output = '';
-    
+
     switch( $choices ) {
         case 'search':
         default:
@@ -101,7 +101,7 @@ function bfg_navbar_content_markup() {
             $output .= '<button class="btn btn-outline-success" type="submit">Search</button>';
             $output .= '</form>';
             break;
-        case 'date': 
+        case 'date':
             $output .= '<p class="navbar-text navbar-right mb-0">';
             $output .= date_i18n( get_option( 'date_format' ) );
             $output .= '</p>';
@@ -122,7 +122,7 @@ function bfg_navbar_content_markup() {
 	return $output;
 }
 
-// Filter menu link attributes and add missing .nav-link class to parent menu link class attribute 
+// Filter menu link attributes and add missing .nav-link class to parent menu link class attribute
 add_filter( 'nav_menu_link_attributes', function( $atts, $item, $args, $depth ) {
     $item_classes = array();
 
@@ -134,7 +134,7 @@ add_filter( 'nav_menu_link_attributes', function( $atts, $item, $args, $depth ) 
         $item_classes[] = 'nav-link';
     }
 
-    $atts['class'] = join( ' ', $item_classes ); 
-    
+    $atts['class'] = join( ' ', $item_classes );
+
     return $atts;
 }, 10, 4 );
