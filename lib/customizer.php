@@ -18,17 +18,44 @@ add_action( 'customize_register', function( $wp_customize ) {
         'type' => 'theme_mod'
     ) );
 
-    // Add Bootstrap Panel
-    $wp_customize->add_panel( 'bootstrap', array(
-        'title' => __( 'Bootstrap for Genesis', 'wellington-studio' ),
+    // Add Panel
+    $wp_customize->add_panel( 'wellington', array(
+        'title' => __( 'Wellinton Studio Settings', 'wellington-studio' ),
         'priority' => 100
     ) );
+
+    // Add Style Section
+	$wp_customize->add_section( 'style', array(
+		'title' => __( 'Theme Style', 'wellington-studio' ),
+		'priority'  => 10,
+		'panel' =>  'wellington'
+	));
+
+	//* Add Font Selector
+	$wp_customize->add_setting( 'fontSelector', array(
+		'default' => ''
+	) );
+
+	$wp_customize->add_control( 'fontSelector', array(
+		'type' => 'select',
+		'priority' => 10,
+		'label' => __( 'Font Selection', 'wellington-studio' ),
+		'section' => 'style',
+		'choices' => array(
+			'' => __( 'Default', 'wellington-studio' ),
+			'openSans-font' => __( 'Open Sans', 'wellington-studio' ),
+			'oswald-font' => __( 'Oswald', 'wellington-studio' ),
+			'roboto-font' => __( 'Roboto', 'wellington-studio' ),
+		)
+	) );
+
+
 
     // Add Navigation Section
     $wp_customize->add_section( 'navigation', array(
         'title' => __( 'Navigation Settings', 'wellington-studio' ),
         'priority' => 10,
-        'panel' => 'bootstrap'
+        'panel' => 'wellington'
     ) );
 
     //* Add Navigation Controls
@@ -106,7 +133,7 @@ add_action( 'customize_register', function( $wp_customize ) {
     $wp_customize->add_section( 'container-layout', array(
         'title' => __( 'Container Layout', 'wellington-studio' ),
         'priority' => 40,
-        'panel' => 'bootstrap'
+        'panel' => 'wellington'
     ) );
 
     $wp_customize->add_setting( 'container', array(
@@ -128,7 +155,7 @@ add_action( 'customize_register', function( $wp_customize ) {
     $wp_customize->add_section( 'footer', array(
         'title' => __( 'Footer Section', 'wellington-studio' ),
         'priority' => 40,
-        'panel' => 'bootstrap'
+        'panel' => 'wellington'
     ) );
 
     $wp_customize->add_setting( 'footerwidgetbg', array(
