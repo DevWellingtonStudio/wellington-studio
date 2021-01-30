@@ -4,8 +4,8 @@
 
 	function load_customizer_css() {
 
-		$openSans   = get_theme_mod('fontselector') == 'opensans-font';
-		$roboto     = get_theme_mod('fontselector') == 'roboto-font';
+		$openSans   = get_theme_mod('fontSelector') == 'openSans-font';
+		$roboto     = get_theme_mod('fontSelector') == 'roboto-font';
 
 		$css_1 = '';
 		if($openSans) {

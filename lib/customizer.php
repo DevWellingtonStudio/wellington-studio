@@ -32,18 +32,18 @@ add_action( 'customize_register', function( $wp_customize ) {
 	));
 
 	//* Add Font Selector
-	$wp_customize->add_setting( 'fontselector', array(
+	$wp_customize->add_setting( 'fontSelector', array(
 		'default' => ''
 	) );
 
-	$wp_customize->add_control( 'fontselector', array(
+	$wp_customize->add_control( 'fontSelector', array(
 		'type' => 'select',
 		'priority' => 10,
 		'label' => __( 'Font Selection', 'wellington-studio' ),
 		'section' => 'style',
 		'choices' => array(
 			'' => __( 'Default', 'wellington-studio' ),
-			'opensans-font' => __( 'Open Sans', 'wellington-studio' ),
+			'openSans-font' => __( 'Open Sans', 'wellington-studio' ),
 			'oswald-font' => __( 'Oswald', 'wellington-studio' ),
 			'roboto-font' => __( 'Roboto', 'wellington-studio' ),
 		)
