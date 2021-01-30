@@ -43,7 +43,7 @@ add_action( 'customize_register', function( $wp_customize ) {
 		'section' => 'style',
 		'choices' => array(
 			'' => __( 'Default', 'wellington-studio' ),
-			'helvetica-font' => __( 'Helvetica', 'wellington-studio' ),
+			'opensans-font' => __( 'Open Sans', 'wellington-studio' ),
 			'oswald-font' => __( 'Oswald', 'wellington-studio' ),
 			'roboto-font' => __( 'Roboto', 'wellington-studio' ),
 		)

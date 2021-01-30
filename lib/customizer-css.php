@@ -3,15 +3,23 @@
 
 
 	function load_customizer_css() {
-		$helvetica  = get_theme_mod('fontselector') == 'helvetica-font';
-		$css_1 = '';
-		if($helvetica) {
-			$css_1 .='
-			h2 {
-				font-size: 10em;
-				color: red;
-			}
 
+		$openSans   = get_theme_mod('fontselector') == 'opensans-font';
+		$roboto     = get_theme_mod('fontselector') == 'roboto-font';
+
+		$css_1 = '';
+		if($openSans) {
+			$css_1 .='
+			h1,h2,h3,h4,h5 {
+			 font-family: "Open Sans", sans-serif;
+			}
+			';
+		}
+		if($roboto) {
+			$css_1 .='
+			h1,h2,h3,h4,h5 {
+			 font-family: "Roboto", sans-serif;
+			}
 			';
 		}
 		return $css_1;
