@@ -3,7 +3,8 @@
 
 add_action('wp_head', 'add_hero_video');
 function add_hero_video() {
-	echo '
+	if(is_front_page()) {
+		echo '
 		<section>
 		<div class="overlay"></div>
 			<video playsinline="playsinline" autoplay="autoplay" muted="muted" loop="loop">
@@ -18,5 +19,6 @@ function add_hero_video() {
 			</div>
 			</div>
 		</section>
-	';
+		';
+	}
 }
