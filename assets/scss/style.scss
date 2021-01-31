@@ -83,3 +83,19 @@
 
 // Gutenberg
 @import "supporting/gutenberg";
+
+
+@import "supporting/partials/base";
+@import "supporting/partials/reset";
+@import "supporting/partials/layout";
+@import "supporting/partials/form";
+@import "supporting/partials/blocks-base";
+@import "supporting/partials/blocks-core";
+@import "supporting/partials/blocks-plugin";
+@import "supporting/partials/blocks-custom";
+@import "supporting/partials/site-header";
+@import "supporting/partials/navigation";
+@import "supporting/partials/post-summary";
+@import "supporting/partials/archive";
+@import "supporting/partials/singular";
+@import "supporting/partials/site-footer";
