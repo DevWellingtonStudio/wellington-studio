@@ -3,8 +3,10 @@
 
 add_action('genesis_before_header', 'add_hero_video', 10);
 function add_hero_video() {
-	if(is_front_page()) {
-		echo '
+
+	if ( !is_active_sidebar( 'home-featured' ) && is_front_page() ) {
+
+			echo '
 		<section>
 		<div class="overlay"></div>
 			<video playsinline="playsinline" autoplay="autoplay" muted="muted" loop="loop">

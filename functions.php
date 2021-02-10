@@ -96,6 +96,10 @@ function bfg_childtheme_setup() {
 		include $file;
 	}
 
+	foreach ( glob(dirname(__FILE__) . '/meta-fields/*.php') as $meta_file ) {
+		include $meta_file;
+	}
+
 	// Load Child theme text domain
 	load_child_theme_textdomain( 'wellington-studio', get_stylesheet_directory() . '/languages' );
 }

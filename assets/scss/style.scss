@@ -84,7 +84,7 @@
 // Gutenberg
 @import "supporting/gutenberg";
 
-
+// Partials
 @import "supporting/partials/base";
 @import "supporting/partials/reset";
 @import "supporting/partials/layout";
@@ -99,3 +99,6 @@
 @import "supporting/partials/archive";
 @import "supporting/partials/singular";
 @import "supporting/partials/site-footer";
+
+// Templates
+@import "supporting/templates/blocks";
