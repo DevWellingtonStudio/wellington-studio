@@ -20,7 +20,7 @@ add_action( 'customize_register', function( $wp_customize ) {
 
     // Add Panel
     $wp_customize->add_panel( 'wellington', array(
-        'title' => __( 'Wellinton Studio Settings', 'wellington-studio' ),
+        'title' => __( 'Wellington Studio Settings', 'wellington-studio' ),
         'priority' => 100
     ) );
 
@@ -43,12 +43,26 @@ add_action( 'customize_register', function( $wp_customize ) {
 		'section' => 'style',
 		'choices' => array(
 			'' => __( 'Default', 'wellington-studio' ),
-			'openSans-font' => __( 'Open Sans', 'wellington-studio' ),
-			'oswald-font' => __( 'Oswald', 'wellington-studio' ),
-			'roboto-font' => __( 'Roboto', 'wellington-studio' ),
+			'openSans-domine-font' => __( 'Open Sans/Domine', 'wellington-studio' ),
+			'montserrat-oswald-font' => __( 'Montserrat/Oswald', 'wellington-studio' ),
+			'roboto-raleway-font' => __( 'Roboto/Raleway', 'wellington-studio' ),
 		)
 	) );
 
+	//* Add Color Palette
+	$wp_customize->add_setting( 'colorPalette', array(
+		'default' => ''
+	));
+	$wp_customize->add_control( 'colorPalette', array(
+		'type' => 'select',
+		'priority' => 10,
+		'label' => __( 'Color Palette', 'wellington-studio' ),
+		'section' => 'style',
+		'choices' => array(
+			'' => __( 'Default', 'wellington-studio' ),
+			'dark-solar' => __( 'Dark Solar', 'wellington-studio' )
+		)
+	) );
 
 
     // Add Navigation Section
@@ -107,7 +121,8 @@ add_action( 'customize_register', function( $wp_customize ) {
         'choices' => array(
             'light' => __( 'Light', 'wellington-studio' ),
             'dark' => __( 'Dark', 'wellington-studio' ),
-            'primary' => __( 'Primary', 'wellington-studio' )
+            'primary' => __( 'Primary', 'wellington-studio' ),
+	        'dark-solar' => __( 'Dark Solar', 'wellington-studio' )
         )
     ) );
 
@@ -170,7 +185,8 @@ add_action( 'customize_register', function( $wp_customize ) {
         'choices' => array(
             'light' => __( 'Light', 'wellington-studio' ),
             'dark' => __( 'Dark', 'wellington-studio' ),
-            'primary' => __( 'Primary', 'wellington-studio' )
+            'primary' => __( 'Primary', 'wellington-studio' ),
+	        'dark-solar' => __('Dark Solar', 'wellington-studio' )
         )
     ) );
 
@@ -186,7 +202,8 @@ add_action( 'customize_register', function( $wp_customize ) {
         'choices' => array(
             'light' => __( 'Light', 'wellington-studio' ),
             'dark' => __( 'Dark', 'wellington-studio' ),
-            'primary' => __( 'Primary', 'wellington-studio' )
+            'primary' => __( 'Primary', 'wellington-studio' ),
+            'dark-solar' => __('Dark Solar', 'wellington-studio' )
         )
     ) );
 } );
