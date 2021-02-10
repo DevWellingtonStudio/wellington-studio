@@ -1,7 +1,7 @@
 <?php
 	/** Hero images, carousel, video */
 
-add_action('wp_head', 'add_hero_video');
+add_action('genesis_before_header', 'add_hero_video', 10);
 function add_hero_video() {
 	if(is_front_page()) {
 		echo '

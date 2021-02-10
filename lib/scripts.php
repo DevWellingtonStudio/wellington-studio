@@ -16,7 +16,7 @@ add_action( 'wp_enqueue_scripts', 'bfg_theme_scripts' );
 function bfg_theme_scripts() {
 	$version = wp_get_theme()->Version;
 	if ( !is_admin() ) {
-		wp_enqueue_style( 'custom-css', get_stylesheet_directory_uri() . '/assets/css/custom.css', array(), '1.0', all );
+		wp_enqueue_style( 'custom-css', get_stylesheet_directory_uri() . '/assets/css/custom.css', array(), '1.0', 'all' );
 
 
 		if(function_exists('load_customizer_css')) {
