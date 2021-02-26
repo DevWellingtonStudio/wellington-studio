@@ -32,7 +32,7 @@ function bfg_footer_widget_areas( $output, $footer_widgets ) {
         default:
             $class = 'col-sm-12';
             break;
-        
+
         case '2':
             $class = 'col-sm-6';
             break;
@@ -41,7 +41,7 @@ function bfg_footer_widget_areas( $output, $footer_widgets ) {
             $class = 'col-sm-4';
             break;
 
-        case '4': 
+        case '4':
             $class = 'col-sm-3';
             break;
 
@@ -73,19 +73,19 @@ function bfg_footer_widget_areas( $output, $footer_widgets ) {
     }
 
     if ( $inside ) {
-    
+
         $output .= genesis_markup( array(
             'html5'   => '<div %s>',
             'xhtml'   => '<div id="footer-widgets" class="footer-widgets">',
             'context' => 'footer-widgets',
         ) );
-    
-        $output .= genesis_structural_wrap( 'footer-widgets', 'open', 0 );
-        
+
+        $output .= genesis_get_structural_wrap( 'footer-widgets', 'open', 0 );
+
         $output .= $inside;
-        
-        $output .= genesis_structural_wrap( 'footer-widgets', 'close', 0 );
-        
+
+        $output .= genesis_get_structural_wrap( 'footer-widgets', 'close', 0 );
+
         $output .= '</div>';
 
     }
