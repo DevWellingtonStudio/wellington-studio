@@ -12,6 +12,11 @@
 */
 
 add_action( 'customize_register', function( $wp_customize ) {
+		include 'customizer-sections/fp-hero-video-options.php';
+		include 'customizer-sections/fp-hero-slider-options.php';
+
+		$transport = ( $wp_customize->selective_refresh ? 'postMessage' : 'refresh');
+
     // Add Default Settings
     $wp_customize->add_setting( 'wellington-studio', array(
         'capability' => 'edit_theme_options',
@@ -24,46 +29,45 @@ add_action( 'customize_register', function( $wp_customize ) {
         'priority' => 100
     ) );
 
-    // Add Style Section
-	$wp_customize->add_section( 'style', array(
-		'title' => __( 'Theme Style', 'wellington-studio' ),
-		'priority'  => 10,
-		'panel' =>  'wellington'
-	));
+		// Add Style Section
+		$wp_customize->add_section( 'style', array(
+			'title' => __( 'Theme Style', 'wellington-studio' ),
+			'priority'  => 10,
+			'panel' =>  'wellington'
+		));
 
-	//* Add Font Selector
-	$wp_customize->add_setting( 'fontSelector', array(
-		'default' => ''
-	) );
+		//* Add Font Selector
+		$wp_customize->add_setting( 'fontSelector', array(
+			'default' => ''
+		) );
 
-	$wp_customize->add_control( 'fontSelector', array(
-		'type' => 'select',
-		'priority' => 10,
-		'label' => __( 'Font Selection', 'wellington-studio' ),
-		'section' => 'style',
-		'choices' => array(
-			'' => __( 'Default', 'wellington-studio' ),
-			'openSans-domine-font' => __( 'Open Sans/Domine', 'wellington-studio' ),
-			'montserrat-oswald-font' => __( 'Montserrat/Oswald', 'wellington-studio' ),
-			'roboto-raleway-font' => __( 'Roboto/Raleway', 'wellington-studio' ),
-		)
-	) );
+		$wp_customize->add_control( 'fontSelector', array(
+			'type' => 'select',
+			'priority' => 10,
+			'label' => __( 'Font Selection', 'wellington-studio' ),
+			'section' => 'style',
+			'choices' => array(
+				'' => __( 'Default', 'wellington-studio' ),
+				'openSans-domine-font' => __( 'Open Sans/Domine', 'wellington-studio' ),
+				'montserrat-oswald-font' => __( 'Montserrat/Oswald', 'wellington-studio' ),
+				'roboto-raleway-font' => __( 'Roboto/Raleway', 'wellington-studio' ),
+			)
+		) );
 
-	//* Add Color Palette
-	$wp_customize->add_setting( 'colorPalette', array(
-		'default' => ''
-	));
-	$wp_customize->add_control( 'colorPalette', array(
-		'type' => 'select',
-		'priority' => 10,
-		'label' => __( 'Color Palette', 'wellington-studio' ),
-		'section' => 'style',
-		'choices' => array(
-			'' => __( 'Default', 'wellington-studio' ),
-			'dark-solar' => __( 'Dark Solar', 'wellington-studio' )
-		)
-	) );
-
+		//* Add Color Palette
+		$wp_customize->add_setting( 'colorPalette', array(
+			'default' => ''
+		));
+		$wp_customize->add_control( 'colorPalette', array(
+			'type' => 'select',
+			'priority' => 10,
+			'label' => __( 'Color Palette', 'wellington-studio' ),
+			'section' => 'style',
+			'choices' => array(
+				'' => __( 'Default', 'wellington-studio' ),
+				'dark-solar' => __( 'Dark Solar', 'wellington-studio' )
+			)
+		) );
 
     // Add Navigation Section
     $wp_customize->add_section( 'navigation', array(
