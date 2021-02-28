@@ -55,7 +55,7 @@ function add_hero_video() {
 		</section>
 		';
 		}
-	} elseif($wst_slider1 !== $default && $hero_url == $default) {
+	} elseif($wst_slider1 !== $default && $hero_url == $default && ! is_active_sidebar( 'home-featured' ) && is_front_page()) {
 
 echo '
 		    <div id="hero-section">
