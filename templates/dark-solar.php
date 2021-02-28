@@ -1,6 +1,6 @@
 <?php
 	/**
-	 * Template Name: Dark Solar
+	 * Template Name: Dark Solar Template
 	 *
 	 * @package      Bootstrap for Genesis
 	 * @since        1.0
