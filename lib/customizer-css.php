@@ -88,6 +88,14 @@
 			';
 		}
 
+		$top_setting_row = get_theme_mod('top_setting_row', $default);
+
+		$css_1 .= '
+			#dark-solar-feature-row {
+				background-color:'. $top_setting_row .';
+			}
+		';
+
 
 
 
