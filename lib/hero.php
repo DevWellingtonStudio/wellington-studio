@@ -4,7 +4,7 @@
 	 * https://storage.googleapis.com/coverr-main/mp4/Mt_Baker.mp4
 	 */
 
-add_action('genesis_before_header', 'add_hero_video', 10);
+add_action('genesis_after_header', 'add_hero_video', 5);
 function add_hero_video() {
 
 	$default  = '';
@@ -45,7 +45,7 @@ function add_hero_video() {
 	$slider1_alt  = get_post_meta( $slider1_id, '_wp_attachment_image_alt', true );
 
 	if($hero_url !== $default) {
-		if ( ! is_active_sidebar( 'home-featured' ) && is_front_page() ) {
+		if ( ! is_active_sidebar( 'home-featured' ) && is_page_template( 'templates/dark-solar.php' ) ) {
 
 			echo '
 		<section id="hero-video-section">
@@ -68,7 +68,7 @@ function add_hero_video() {
 		</section>
 		';
 		}
-	} elseif($wst_slider1 !== $default && $hero_url == $default && ! is_active_sidebar( 'home-featured' ) && is_front_page()) {
+	} elseif($wst_slider1 !== $default && $hero_url == $default && ! is_active_sidebar( 'home-featured' ) && is_page_template( 'templates/dark-solar.php' )) {
 
 echo '
 		    <div id="hero-section">
@@ -119,7 +119,7 @@ echo '
 				    </a>
 				  </div>
 				</div>';
-	} elseif($port_slider1 !== $default && $wst_slider1 == $default && $hero_url == $default && ! is_active_sidebar( 'home-featured' ) && is_front_page()) {
+	} elseif($port_slider1 !== $default && $wst_slider1 == $default && $hero_url == $default && ! is_active_sidebar( 'home-featured' ) && is_page_template( 'templates/dark-solar.php' )) {
 
 	echo '<div id="portrait-section">
 				 <div id="wstPortraitSlider" class="carousel slide carousel-fade" data-ride="carousel">
@@ -205,6 +205,8 @@ echo '
 				 </a>';
 		   }
 	echo '</div>';
+	} elseif($hero_url == $default && $wst_slider1 == $default && $port_slider1 == $default) {
+		echo '<div class="no-hero-margin"></div>';
 	}
  }
 

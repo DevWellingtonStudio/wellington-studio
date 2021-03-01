@@ -32,8 +32,12 @@
 	function dark_solar_temp_meta_callback( $post ) {
 		wp_nonce_field( basename( __FILE__ ), 'dark_solar_temp_nonce' );
 		$dark_solar_temp_stored_meta = get_post_meta( $post->ID ); ?>
+	  <p>
+		<strong><label for="top-feature-row" class="signature-events-row-title"><?php _e( 'Top Feature Row', 'wellington-studio' )?></label></strong>
+		<textarea style="width: 100%;" rows="4" name="top-feature-row" id="top-feature-row"><?php if ( isset ( $dark_solar_temp_stored_meta['top-feature-row'] ) ) echo $dark_solar_temp_stored_meta['top-feature-row'][0]; ?></textarea>
+	  </p>
 
-		<h2 class="admin-font">Dark Solar Template Settings</h2>
+
 
 
 	<?php
