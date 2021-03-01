@@ -4,7 +4,7 @@
 .site-header {
 	background: $white;
 	position: relative;
-	min-height: 49px;
+	/*min-height: 49px;*/
 }
 
 .title-area {
@@ -59,9 +59,9 @@
 --------------------------------------------- */
 
 @include media(">782px" ) {
-	.admin-bar .site-container {
+	/*.admin-bar .site-container {
 		padding-top: 32px;
-	}
+	}*/
 }
 
 @include media("<=782px") {
@@ -122,7 +122,7 @@
 			max-height: 100vh;
 		}
 
-		@include media(">782px") {
+		 @include media(">782px") {
 			.admin-bar {
 
 				.site-container {
