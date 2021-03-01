@@ -124,10 +124,14 @@ echo '
 	echo '<div id="portrait-section">
 				 <div id="wstPortraitSlider" class="carousel slide carousel-fade" data-ride="carousel">
 					<ol class="carousel-indicators">
-					 <li data-target="#wstPortraitSlider" data-slide-to="0" class="active"></li>
-					 <li data-target="#wstPortraitSlider" data-slide-to="1"></li>
-					 <li data-target="#wstPortraitSlider" data-slide-to="2"></li>
-					</ol>
+					 <li data-target="#wstPortraitSlider" data-slide-to="0" class="active"></li>';
+						if($port_slider2 != $default) {
+						echo '<li data-target="#wstPortraitSlider" data-slide-to="1"></li >';
+						}
+						if($port_slider3 !== $default) {
+						echo '<li data-target="#wstPortraitSlider" data-slide-to="2"></li >';
+						}
+	echo	 '</ol>
 					<div class="carousel-inner">
 					 <div id="portrait-item-one" class="carousel-item active slider-one-title-color">
 						<div id="portrait-hero" class="card">
@@ -189,16 +193,18 @@ echo '
 					 </div>';
 		      }
 	 echo '</div>
-      </div>
-		  <a class="carousel-control-prev" href="#wstPortraitSlider" role="button" data-slide="prev">
-			<span class="carousel-control-prev-icon" aria-hidden="true"></span>
-			<span class="sr-only">Previous</span>
-		 </a>
-		 <a class="carousel-control-next" href="#wstPortraitSlider" role="button" data-slide="next">
-			<span class="carousel-control-next-icon" aria-hidden="true"></span>
-			<span class="sr-only">Next</span>
-		 </a>
-	</div>';
+      </div>';
+			if($port_slider2 !== $default) {
+	 echo '<a class="carousel-control-prev" href="#wstPortraitSlider" role="button" data-slide="prev">
+					<span class="carousel-control-prev-icon" aria-hidden="true"></span>
+					<span class="sr-only">Previous</span>
+				 </a>
+				 <a class="carousel-control-next" href="#wstPortraitSlider" role="button" data-slide="next">
+					<span class="carousel-control-next-icon" aria-hidden="true"></span >
+					<span class="sr-only">Next</span>
+				 </a>';
+		   }
+	echo '</div>';
 	}
  }
 
