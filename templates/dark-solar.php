@@ -15,14 +15,19 @@
 
 	add_action('genesis_after_header', 'add_darksolar_content', 10);
 	function add_darksolar_content() {
+	  $default = '';
+	  $top_feature_row	= get_post_meta(get_the_ID(), 'top-feature-row', true);
+
+	if($top_feature_row !== $default) {
 	?>
 
-	<div id="dark-solar-wrapper" class="container-fluid">
-		<div class="row">
-			<h1>Heeelloooo!</h1>
-		</div>
+	<div id="dark-solar-feature-row" class="container-fluid">
+	  <div class="row justify-content-center align-items-center pt-5 pb-5">
+	  	<?php echo $top_feature_row; ?>
+	  </div>
 	</div>
 
 	<?php
+	}
 	}
 	genesis();
