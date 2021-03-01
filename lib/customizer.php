@@ -11,9 +11,13 @@
  *
 */
 
+
+
 add_action( 'customize_register', function( $wp_customize ) {
+
 		include 'customizer-sections/fp-hero-video-options.php';
 		include 'customizer-sections/fp-hero-slider-options.php';
+		include 'customizer-sections/portrait-slider-options.php';
 
 		$transport = ( $wp_customize->selective_refresh ? 'postMessage' : 'refresh');
 
