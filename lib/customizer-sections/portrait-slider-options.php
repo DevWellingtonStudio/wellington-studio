@@ -168,8 +168,8 @@
 	);
 	// Portrait Slider #1 Title
 	$wp_customize->add_setting( 'p-slider-title1', array(
-		'default'	          =>	'',
-		'type'	            => 'theme_mod',
+		'default'	          =>	__('Portrait Slider #1 Title', 'wellington-studio'),
+		'type'	            =>  'theme_mod',
 		'transport'         =>  'postMessage',
 		'sanitize_callback'	=>	'sanitize_text_field'
 	));
@@ -189,8 +189,8 @@
 	);
 	// Portrait Slider #1 Text Area
 	$wp_customize->add_setting( 'p-slider-text1', array(
-	'default'	            =>	'',
-		'type'	            => 'theme_mod',
+		'default'	          =>	__('Portrait Slider # Text Area', 'wellington-studio'),
+		'type'	            =>  'theme_mod',
 		'transport'         =>  'postMessage',
 		'sanitize_callback'	=>	'sanitize_text_field'
 	));
@@ -210,7 +210,7 @@
 	);
 	// Portrait #1 Button Link
 	$wp_customize->add_setting ( 'port1_btn_url', array(
-		'default'	=> '',
+		'default'	=> __('#', 'wellington-studio'),
 		'type'		=> 'theme_mod',
 		'sanitize_callback' => 'esc_url',
 	));
@@ -440,7 +440,7 @@
 	);
 	// Portrait #2 Button Link
 	$wp_customize->add_setting ( 'port2_btn_url', array(
-		'default'	          =>  '',
+		'default'	          =>  __('#', 'wellington-studio'),
 		'type'		          =>  'theme_mod',
 		'transport'         =>  'refresh',
 		'sanitize_callback' =>  'esc_url',
@@ -666,7 +666,7 @@
 	);
 	// Portrait #3 Button Link
 	$wp_customize->add_setting( 'port3_btn_url', array(
-		'default'           => '',
+		'default'           => __('#', 'wellington-studio'),
 		'type'              => 'theme_mod',
 		'transport'         => 'refresh',
 		'sanitize_callback' => 'esc_url',
