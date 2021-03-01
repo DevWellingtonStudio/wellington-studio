@@ -1,12 +1,6 @@
 /* Navbar
 ----------------------------------------------------------------------------- */
 
-.logged-in.admin-bar {
-  nav {
-	margin-top: 32px;
-  }
-}
-
 .no-js .menu-item-has-children:hover .dropdown-menu,
 .no-js .menu-item-has-children:focus .dropdown-menu {
     display: block;
@@ -14,7 +8,7 @@
 
 /* Move navigation below wp-admin bar */
 .logged-in {
-    .navbar-fixed-top {
+    .navbar.fixed-top {
         margin-top: 32px; // Move navigation below wp-admin bar
     }
 }
