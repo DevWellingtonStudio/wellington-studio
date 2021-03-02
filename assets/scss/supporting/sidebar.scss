@@ -9,7 +9,6 @@
         word-wrap: break-word;
         background-color: $card-bg;
         background-clip: border-box;
-        border: $card-border-width solid $card-border-color;
         @include border-radius($card-border-radius);
         margin-bottom: $spacer*2;
         &.widget_search {
@@ -20,6 +19,10 @@
             flex: 1 1 auto;
             padding: $card-spacer-y $card-spacer-x;
         }
+	  	img {
+		  margin: 0 auto;
+		  display: block;
+		}
     }
     .widgettitle {
         padding: $card-spacer-y $card-spacer-x;
@@ -50,7 +53,7 @@
                     // @include border-top-radius($list-group-border-radius);
                     border-top: none;
                 }
-              
+
                 &:last-child {
                     margin-bottom: 0;
                     @include border-bottom-radius($list-group-border-radius);
