@@ -14,7 +14,20 @@
 		}
 
 		// Checks for input and saves if needed
+
+		if ( isset( $_POST['top-feed-cat'] ) ) {
+			update_post_meta( $post_id, 'top-feed-cat', $_POST['top-feed-cat'] );
+		}
+
+		if ( isset( $_POST['bottom-feed-cat'] ) ) {
+			update_post_meta( $post_id, 'bottom-feed-cat', $_POST['bottom-feed-cat'] );
+		}
+
 		if ( isset( $_POST['top-feature-row'] ) ) {
 			update_post_meta( $post_id, 'top-feature-row', $_POST['top-feature-row'] );
+		}
+
+		if ( isset( $_POST['masthead'] ) ) {
+			update_post_meta( $post_id, 'masthead', $_POST['masthead'] );
 		}
 	}

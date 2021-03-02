@@ -30,15 +30,29 @@
 	}
 
 	function dark_solar_temp_meta_callback( $post ) {
+
 		wp_nonce_field( basename( __FILE__ ), 'dark_solar_temp_nonce' );
 		$dark_solar_temp_stored_meta = get_post_meta( $post->ID ); ?>
+
 	  <p>
-		<strong><label for="top-feature-row" class="signature-events-row-title"><?php _e( 'Top Feature Row', 'wellington-studio' )?></label></strong>
+		<strong><label for="top-feed-cat" class="top-feed-cat"><?php _e('Top Blog Post Feed Category','wellington-studio' )?></label></strong>
+		<input style="width:20%;" type="text" name="top-feed-cat" id="top-feed-cat" value="<?php if (isset($dark_solar_temp_stored_meta['top-feed-cat'])) echo $dark_solar_temp_stored_meta['top-feed-cat'][0]; ?>" />
+	  </p>
+
+	  <p>
+		<strong><label for="bottom-feed-cat" class="bottom-feed-cat"><?php _e('Bottom Blog Post Feed Category','wellington-studio' )?></label></strong>
+		<input style="width:20%;" type="text" name="bottom-feed-cat" id="bottom-feed-cat" value="<?php if (isset($dark_solar_temp_stored_meta['bottom-feed-cat'])) echo $dark_solar_temp_stored_meta['bottom-feed-cat'][0]; ?>" />
+	  </p>
+
+	  <p>
+		<strong><label for="top-feature-row" class="signature-events-row-title"><?php _e( 'Top Feature Row Ha', 'wellington-studio' )?></label></strong>
 		<textarea style="width: 100%;" rows="4" name="top-feature-row" id="top-feature-row"><?php if ( isset ( $dark_solar_temp_stored_meta['top-feature-row'] ) ) echo $dark_solar_temp_stored_meta['top-feature-row'][0]; ?></textarea>
 	  </p>
 
-
-
+	  <p>
+		<strong><label for="masthead" class="signature-events-row-title"><?php _e( 'Masthead', 'wellington-studio' )?></label></strong>
+		<textarea style="width: 100%;" rows="4" name="masthead" id="masthead"><?php if ( isset ( $dark_solar_temp_stored_meta['masthead'] ) ) echo $dark_solar_temp_stored_meta['masthead'][0]; ?></textarea>
+	  </p>
 
 	<?php
 	}
