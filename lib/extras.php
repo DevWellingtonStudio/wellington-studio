@@ -15,11 +15,11 @@
 add_filter( 'the_content', 'bfg_image_responsive_class' );
 function bfg_image_responsive_class( $content ) {
    global $post;
-   
+
    $pattern ="/<img(.*?)class=\"(.*?)\"(.*?)>/i";
    $replacement = '<img$1class="$2 img-fluid"$3>';
    $content = preg_replace( $pattern, $replacement, $content );
-   
+
    return $content;
 }
 
@@ -120,3 +120,23 @@ add_filter( 'get_custom_logo', function( $html ) {
 
     return $html;
 }, 10 );
+
+// Excerpt Length
+	function custom_excerpt_length( $length ) {
+		if(is_page_template('templates/dark-solar.php')) {
+			return 15;
+		}
+	}
+	add_filter( 'excerpt_length', 'custom_excerpt_length', 999 );
+
+// Read More
+	function modify_read_more_link() {
+		return '<br><a class="more-link" href="' . get_permalink() . '">Find Out More...</a>';
+	}
+	add_filter( 'the_content_more_link', 'modify_read_more_link' );
+
+	function new_excerpt_more($more) {
+		global $post;
+		return '<br><a class="moretag" href="'. get_permalink($post->ID) . '">Find Out More...</a>';
+	}
+	add_filter('excerpt_more', 'new_excerpt_more');
