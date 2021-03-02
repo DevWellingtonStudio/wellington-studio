@@ -101,24 +101,27 @@ echo '
 						  }
 						 if($wst_slider3 !== $default) {
 				       echo ' <div id="slider-three" class="carousel-item">
-				         <img src="' . $wst_slider3 . '" class="d-block w-100" alt="'. $slider3_alt .'">
-				         <div class="carousel-caption d-md-block">
-				           <h2 class="slider-three-title">' . $slider3title . '</h2>
-				           <p class="slider-three-text lead">' . $slider3text  . '</p>
-				         </div>
-				       </div>';
+							         <img src="' . $wst_slider3 . '" class="d-block w-100" alt="'. $slider3_alt .'">
+							         <div class="carousel-caption d-md-block">
+							           <h2 class="slider-three-title">' . $slider3title . '</h2>
+							           <p class="slider-three-text lead">' . $slider3text  . '</p>
+							         </div>
+							       </div>';
 						  }
-				    echo ' </div>
-				    <a class="carousel-control-prev" href="#wstTopSlider" role="button" data-slide="prev">
-				      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-				      <span class="sr-only">Previous</span>
-				    </a>
-				    <a class="carousel-control-next" href="#wstTopSlider" role="button" data-slide="next">
-				      <span class="carousel-control-next-icon" aria-hidden="true"></span>
-				      <span class="sr-only">Next</span>
-				    </a>
-				  </div>
-				</div>';
+				    echo '</div>';
+						 if($wst_slider2 !== $default) {
+
+						echo '<a class="carousel-control-prev" href="#wstTopSlider" role="button" data-slide="prev">
+							      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+							      <span class="sr-only">Previous</span>
+							    </a>
+							    <a class="carousel-control-next" href="#wstTopSlider" role ="button" data-slide="next">
+							      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+							      <span class="sr-only">Next</span>
+							    </a>';
+				      }
+				  echo '</div>
+						</div>';
 	} elseif($port_slider1 !== $default && $wst_slider1 == $default && $hero_url == $default && ! is_active_sidebar( 'home-featured' ) && is_page_template( 'templates/dark-solar.php' )) {
 
 	echo '<div id="portrait-section">
