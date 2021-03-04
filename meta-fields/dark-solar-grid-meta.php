@@ -40,8 +40,10 @@
 		</p>
 
 		<p>
+
 		  <strong><label for="button-text-grid" class="button-text-grid"><?php _e('Button Label','wellington-studio' )?></label></strong>
 		  <input style="width:20%;" type="text" name="button-text-grid" id="button-text-grid" value="<?php if (isset($dark_solar_grid_temp_stored_meta['button-text-grid'])) echo $dark_solar_grid_temp_stored_meta['button-text-grid'][0]; ?>" />
+
 		</p>
 
 		<p>
