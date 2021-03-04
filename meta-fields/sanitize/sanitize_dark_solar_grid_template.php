@@ -22,4 +22,8 @@
 		if ( isset( $_POST['button-text-grid'] ) ) {
 			update_post_meta( $post_id, 'button-text-grid', $_POST['button-text-grid'] );
 		}
+
+		if ( isset( $_POST['dark-solar-textarea'] ) ) {
+			update_post_meta( $post_id, 'dark-solar-textarea', $_POST['dark-solar-textarea'] );
+		}
 	}

@@ -44,4 +44,9 @@
 		  <input style="width:20%;" type="text" name="button-text-grid" id="button-text-grid" value="<?php if (isset($dark_solar_grid_temp_stored_meta['button-text-grid'])) echo $dark_solar_grid_temp_stored_meta['button-text-grid'][0]; ?>" />
 		</p>
 
+		<p>
+		  <strong><label for="dark-solar-textarea" class="signature-events-row-title"><?php _e( 'Grid Template Textarea ', 'wellington-studio' )?></label></strong>
+		  <textarea style="width: 100%;" rows="4" name="dark-solar-textarea" id="dark-solar-textarea"><?php if ( isset ( $dark_solar_grid_temp_stored_meta['dark-solar-textarea'] ) ) echo $dark_solar_grid_temp_stored_meta['dark-solar-textarea'][0]; ?></textarea>
+		</p>
+
 <?php } ?>

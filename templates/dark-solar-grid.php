@@ -50,5 +50,18 @@
 		     '</div>';
 	}
 
+	add_action('genesis_before_footer', 'add_textarea_above_footer', 5);
+	function add_textarea_above_footer() {
+		$default = '';
+		$dark_solar_textarea = get_post_meta( get_the_ID(), 'dark-solar-textarea', true );
+		$content = apply_filters('the_content', $dark_solar_textarea);
+		$content = str_replace(array('<p>', '</p>'), '', $content);
+		if ( $dark_solar_textarea !== $default ) {
+			echo '<div id="dark-solar-grid-textarea" class="container-fluid">
+						' . apply_filters( 'the_content', $dark_solar_textarea ) . '
+					</div>';
+		}
+	}
+
 	genesis();
 
