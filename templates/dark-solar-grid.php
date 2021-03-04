@@ -17,16 +17,23 @@
 		$grid_feed_cat = get_post_meta(get_the_ID(), 'grid-feed-cat', true);
 		$button_text_grid = get_post_meta(get_the_ID(), 'button-text-grid', true);
 
-		$args = array(
-			'category_name' => $grid_feed_cat,
-		);
+		if($grid_feed_cat !== $default) {
+			$args = array(
+				'category_name' => $grid_feed_cat,
+			);
+		} else {
+			$args = array(
+				'post_type' => 'post',
+			);
+		}
 
 		$query = new WP_Query( $args );
 		echo '<div id="dark-solar-grid-feed" class="container grid-feed">' .
 		     '<div class="row justify-content-center">';
 
 		if ( $query->have_posts() ) {
-			while ( $query->have_posts() && $grid_feed_cat !== $default ) {
+			//while ( $query->have_posts() && $grid_feed_cat !== $default ) {
+			while ( $query->have_posts() ) {
 				$query->the_post();
 
 				$featured_img_url = get_the_post_thumbnail_url(get_the_ID(),'full');
