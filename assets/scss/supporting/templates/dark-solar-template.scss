@@ -24,12 +24,14 @@
 ===================== */
 
 section {
-  position: relative;
-  background-color: black;
-  height: 75vh;
-  min-height: 25rem;
-  width: 100%;
-  overflow: hidden;
+  &#hero-video-section {
+	position: relative;
+	background-color: black;
+	height: 75vh;
+	min-height: 25rem;
+	width: 100%;
+	overflow: hidden;
+  }
 }
 
 section video {
