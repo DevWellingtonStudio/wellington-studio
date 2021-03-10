@@ -29,9 +29,9 @@ function bfg_theme_scripts() {
 		wp_deregister_script( 'superfish-args' );
 
 		// Deregister jQuery and use Bootstrap supplied version
-		if(!is_customize_preview()) {
+	/*	if(!is_customize_preview()) {
 			wp_deregister_script( 'jquery' );
-		}
+		} */
 		wp_register_script( 'jquery', BFG_THEME_JS . 'jquery.slim.min.js', array(), $version, true );
 		wp_enqueue_script( 'jquery' );
 
